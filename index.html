@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClosetMaid Pro × Tri-Supply | Partner Onboarding</title>
+  <title>ClosetMaid Pro &times; Tri-Supply &mdash; Products</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -11,31 +11,26 @@
       --red:   #EE2E24;
       --navy:  #180D43;
       --dark:  #232120;
-      --teal:  #05738C;
       --light: #F5F5F5;
       --white: #FFFFFF;
       --gray:  #757575;
+      --ltgray:#E8E8E8;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Open Sans', Arial, sans-serif;
       background: var(--dark);
       color: var(--white);
       overflow-x: hidden;
-      line-height: 1.6;
+      line-height: 1.65;
     }
     h1,h2,h3,h4 { font-family: 'Montserrat', Arial, sans-serif; }
 
-    /* Nav */
+    /* ── Nav ── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
       padding: 1.25rem 3rem;
       transition: background 0.4s, box-shadow 0.4s, padding 0.4s;
     }
@@ -45,66 +40,42 @@
       box-shadow: 0 2px 30px rgba(0,0,0,0.5);
       padding: 0.85rem 3rem;
     }
-    .nav-logo {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 900;
-      font-size: 1rem;
-      letter-spacing: 0.06em;
-    }
+    .nav-logo { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1rem; letter-spacing: 0.06em; }
     .nav-logo span { color: var(--red); }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a {
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: color 0.25s;
+      color: rgba(255,255,255,0.7); text-decoration: none;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; transition: color 0.25s;
       position: relative;
     }
     .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0; right: 0;
-      height: 1px;
-      background: var(--red);
-      transform: scaleX(0);
+      content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+      height: 1px; background: var(--red); transform: scaleX(0);
       transition: transform 0.25s;
     }
     .nav-links a:hover { color: var(--white); }
     .nav-links a:hover::after { transform: scaleX(1); }
 
-    /* Sections */
-    section {
+    /* ── Hero ── */
+    #hero {
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--dark);
+      position: relative; overflow: hidden;
     }
-    .container { max-width: 1180px; width: 100%; margin: 0 auto; padding: 0 3rem; }
-
-    /* ── HERO ── */
-    #hero { background: var(--dark); }
     .hero-glow {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
+      position: absolute; inset: 0; pointer-events: none;
     }
     .hero-glow::before {
-      content: '';
-      position: absolute;
+      content: ''; position: absolute;
       top: -30%; right: -15%;
       width: 800px; height: 800px;
       background: radial-gradient(circle, rgba(238,46,36,0.13) 0%, transparent 65%);
       animation: glowPulse 9s ease-in-out infinite;
     }
     .hero-glow::after {
-      content: '';
-      position: absolute;
+      content: ''; position: absolute;
       bottom: -25%; left: -10%;
       width: 650px; height: 650px;
       background: radial-gradient(circle, rgba(24,13,67,0.4) 0%, transparent 65%);
@@ -114,405 +85,332 @@
       0%, 100% { transform: scale(1); opacity: 1; }
       50% { transform: scale(1.1); opacity: 0.6; }
     }
-
     .hero-inner {
-      text-align: center;
-      position: relative;
-      z-index: 2;
+      text-align: center; position: relative; z-index: 2;
+      padding: 0 2rem;
     }
     .hero-eyebrow {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 1.75rem;
-      opacity: 0;
-      transform: translateY(22px);
+      font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--red); margin-bottom: 1.75rem;
+      opacity: 0; transform: translateY(22px);
       animation: rise 0.85s 0.3s cubic-bezier(0.22,1,0.36,1) forwards;
     }
     .hero-main {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(4.5rem, 10vw, 9rem);
-      font-weight: 900;
-      line-height: 0.92;
+      font-size: clamp(4rem, 9vw, 8rem);
+      font-weight: 900; line-height: 0.92;
       letter-spacing: -0.03em;
-      opacity: 0;
-      transform: translateY(35px);
+      opacity: 0; transform: translateY(35px);
       animation: rise 0.9s 0.5s cubic-bezier(0.22,1,0.36,1) forwards;
     }
-    .hero-main .red { color: var(--red); }
     .hero-main .white { color: var(--white); }
+    .hero-main .red { color: var(--red); }
     .hero-times {
       font-family: 'Montserrat', sans-serif;
-      font-size: 2.2rem;
-      font-weight: 300;
-      color: var(--gray);
-      margin: 0.6rem 0;
+      font-size: 2.2rem; font-weight: 300;
+      color: var(--gray); margin: 0.6rem 0;
       opacity: 0;
       animation: rise 0.7s 0.7s cubic-bezier(0.22,1,0.36,1) forwards;
     }
     .hero-sub {
-      font-size: 1rem;
-      color: var(--gray);
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      margin-top: 0.75rem;
+      font-size: 1rem; color: var(--gray); font-weight: 400;
+      letter-spacing: 0.05em; margin-top: 0.75rem;
       opacity: 0;
       animation: rise 0.7s 0.9s cubic-bezier(0.22,1,0.36,1) forwards;
     }
-    .hero-rule {
-      width: 50px; height: 3px;
-      background: var(--red);
-      margin: 2.5rem auto;
-      opacity: 0;
-      animation: rise 0.7s 1.1s cubic-bezier(0.22,1,0.36,1) forwards;
-    }
+    .hero-rule { width: 50px; height: 3px; background: var(--red); margin: 2.5rem auto; opacity: 0; animation: rise 0.7s 1.1s cubic-bezier(0.22,1,0.36,1) forwards; }
     .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      background: var(--red);
-      color: var(--white);
-      text-decoration: none;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 0.82rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 1.05rem 2.4rem;
-      border-radius: 4px;
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      background: var(--red); color: var(--white); text-decoration: none;
+      font-family: 'Montserrat', sans-serif; font-weight: 700;
+      font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 1.05rem 2.4rem; border-radius: 4px;
       transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
       opacity: 0;
       animation: rise 0.7s 1.3s cubic-bezier(0.22,1,0.36,1) forwards;
     }
-    .hero-cta:hover {
-      background: #c72218;
-      transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba(238,46,36,0.4);
-    }
+    .hero-cta:hover { background: #c72218; transform: translateY(-3px); box-shadow: 0 12px 35px rgba(238,46,36,0.4); }
     .hero-cta svg { transition: transform 0.25s; }
     .hero-cta:hover svg { transform: translateX(5px); }
-
     .scroll-cue {
-      position: absolute;
-      bottom: 2.5rem; left: 50%;
+      position: absolute; bottom: 2.5rem; left: 50%;
       transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
       opacity: 0;
       animation: rise 0.7s 1.6s cubic-bezier(0.22,1,0.36,1) forwards;
     }
-    .scroll-cue span {
-      font-size: 0.68rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gray);
-    }
-    .scroll-cue-line {
-      width: 1px; height: 55px;
-      background: linear-gradient(to bottom, var(--red), transparent);
-      animation: scrollDrop 2.2s ease-in-out infinite;
-    }
-    @keyframes scrollDrop {
-      0%, 100% { transform: scaleY(1); opacity: 1; }
-      50% { transform: scaleY(0.4); opacity: 0.4; }
-    }
-    @keyframes rise {
-      to { opacity: 1; transform: translateY(0); }
-    }
+    .scroll-cue span { font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gray); }
+    .scroll-cue-line { width: 1px; height: 55px; background: linear-gradient(to bottom, var(--red), transparent); animation: scrollDrop 2.2s ease-in-out infinite; }
+    @keyframes scrollDrop { 0%,100% { transform: scaleY(1); opacity:1; } 50% { transform: scaleY(0.4); opacity:0.4; } }
+    @keyframes rise { to { opacity:1; transform:translateY(0); } }
 
-    /* Reveal */
-    .reveal {
-      opacity: 0;
-      transform: translateY(45px);
-      transition: opacity 0.85s cubic-bezier(0.22,1,0.36,1),
-                  transform 0.85s cubic-bezier(0.22,1,0.36,1);
-    }
+    /* ── Section shared ── */
+    section { position: relative; overflow: hidden; }
+    .container { max-width: 1180px; width: 100%; margin: 0 auto; padding: 0 3rem; }
+    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--red); margin-bottom: 0.85rem; }
+    .section-heading { font-size: clamp(2rem, 3.8vw, 2.9rem); font-weight: 800; line-height: 1.1; }
+    .reveal { opacity: 0; transform: translateY(45px); transition: opacity 0.85s cubic-bezier(0.22,1,0.36,1), transform 0.85s cubic-bezier(0.22,1,0.36,1); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-d1 { transition-delay: 0.15s; }
     .reveal-d2 { transition-delay: 0.28s; }
     .reveal-d3 { transition-delay: 0.41s; }
     .reveal-d4 { transition-delay: 0.54s; }
 
-    /* ── OPPORTUNITY ── */
-    #opportunity { background: var(--light); color: var(--dark); }
-    .opp-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.3fr;
-      gap: 5rem;
-      align-items: center;
+    /* ── MULTIFAMILY BANNER ── */
+    #multifamily {
+      background: var(--navy);
+      padding: 3rem 0;
     }
-    .opp-left .section-label { color: var(--red); }
-    .opp-heading {
-      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
-      font-weight: 800;
-      line-height: 1.1;
-      color: var(--navy);
-      margin-top: 0.75rem;
-    }
-    .opp-heading em { font-style: normal; color: var(--red); }
-    .opp-bar {
-      width: 50px; height: 3px;
-      background: var(--red);
-      margin-top: 1.5rem;
-    }
-    .opp-list { list-style: none; display: flex; flex-direction: column; gap: 1.75rem; }
-    .opp-item {
-      display: flex;
-      gap: 1.25rem;
-      align-items: flex-start;
-    }
-    .opp-bullet {
-      flex-shrink: 0;
-      width: 34px; height: 34px;
-      background: var(--red);
-      color: white;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      font-size: 0.82rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-    }
-    .opp-item h4 {
-      font-size: 0.98rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 0.2rem;
-    }
-    .opp-item p { font-size: 0.87rem; color: #555; line-height: 1.55; }
-
-    /* ── PRODUCTS ── */
-    #products { background: var(--dark); }
-    .products-header { text-align: center; margin-bottom: 4rem; }
-    .products-header .section-heading { color: var(--white); }
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-    .prod-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 14px;
-      padding: 2.5rem;
-      position: relative;
-      overflow: hidden;
-      transition: border-color 0.3s, background 0.3s, transform 0.35s, box-shadow 0.35s;
-    }
-    .prod-card::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--red);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
-    }
-    .prod-card:hover {
-      background: rgba(255,255,255,0.065);
-      border-color: rgba(238,46,36,0.25);
-      transform: translateY(-6px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    }
-    .prod-card:hover::after { transform: scaleX(1); }
-    .prod-icon {
-      width: 52px; height: 52px;
-      background: rgba(238,46,36,0.12);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.6rem;
-    }
-    .prod-icon svg { width: 26px; height: 26px; stroke: var(--red); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-    .prod-card h3 { font-size: 1.25rem; font-weight: 700; color: var(--white); margin-bottom: 0.7rem; }
-    .prod-card p { font-size: 0.87rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
-    .prod-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1.25rem; }
-    .prod-tag {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--red);
-      background: rgba(238,46,36,0.1);
-      border: 1px solid rgba(238,46,36,0.2);
-      padding: 0.28rem 0.7rem;
-      border-radius: 100px;
-    }
-
-    /* ── PROCESS ── */
-    #process { background: var(--navy); }
-    .process-header { text-align: center; margin-bottom: 5rem; }
-    .process-header .section-heading { color: var(--white); }
-    .process-track {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1.5rem;
-      position: relative;
-    }
-    .process-track::before {
-      content: '';
-      position: absolute;
-      top: 36px;
-      left: 8%; right: 8%;
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(255,255,255,0.12), transparent);
-    }
-    .step { text-align: center; }
-    .step-circle {
-      width: 72px; height: 72px;
-      background: var(--red);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.4rem;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.45rem;
-      font-weight: 800;
-      color: white;
-      position: relative;
-      z-index: 2;
-      box-shadow: 0 0 0 8px rgba(238,46,36,0.1);
-      transition: box-shadow 0.3s, transform 0.3s;
-    }
-    .step:hover .step-circle {
-      box-shadow: 0 0 0 14px rgba(238,46,36,0.18);
-      transform: scale(1.08);
-    }
-    .step h4 { font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 0.55rem; line-height: 1.3; }
-    .step p { font-size: 0.79rem; color: rgba(255,255,255,0.45); line-height: 1.55; }
-    .process-note {
-      margin-top: 4rem;
-      text-align: center;
-      padding: 1.5rem 2rem;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 10px;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.55);
-      font-style: italic;
-    }
-
-    /* ── NEXT STEPS ── */
-    #next { background: var(--dark); }
-    .next-header { text-align: center; margin-bottom: 3.5rem; }
-    .next-header .section-heading { color: var(--white); }
-    .next-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 1.25rem;
-    }
-    .next-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 12px;
-      padding: 1.8rem;
-      display: flex;
-      gap: 1.2rem;
-      align-items: flex-start;
-      transition: border-color 0.3s, background 0.3s, transform 0.3s;
-    }
-    .next-card:hover {
-      border-color: rgba(238,46,36,0.28);
-      background: rgba(255,255,255,0.05);
-      transform: translateY(-3px);
-    }
-    .next-num {
-      flex-shrink: 0;
-      width: 38px; height: 38px;
-      background: var(--red);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      font-size: 0.88rem;
-      color: white;
-    }
-    .next-card h4 { font-size: 0.97rem; font-weight: 700; color: var(--white); margin-bottom: 0.35rem; }
-    .next-card p { font-size: 0.83rem; color: var(--gray); line-height: 1.55; }
-    .contact-strip {
-      margin-top: 3.5rem;
-      padding: 1.75rem 2.5rem;
-      background: rgba(238,46,36,0.07);
-      border: 1px solid rgba(238,46,36,0.18);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 3rem;
-      flex-wrap: wrap;
-    }
-    .contact-strip .rep-name {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: var(--white);
-    }
-    .contact-strip .rep-role {
-      font-size: 0.78rem;
-      color: var(--gray);
-      margin-top: 0.2rem;
-    }
-    .contact-strip .sep {
-      width: 1px; height: 42px;
-      background: rgba(255,255,255,0.08);
-    }
-    .contact-strip .email { color: rgba(255,255,255,0.65); font-size: 0.9rem; }
-    .contact-strip .email strong { color: var(--white); }
-
-    /* Footer */
-    footer {
-      background: #0d0d0d;
-      padding: 1.75rem 3rem;
+    .multifamily-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 2rem;
       flex-wrap: wrap;
-      gap: 0.75rem;
     }
+    .multifamily-text {
+      flex: 1;
+      min-width: 280px;
+    }
+    .multifamily-text h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+    .multifamily-text p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.55;
+    }
+    .multifamily-cta {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: var(--red); color: var(--white); text-decoration: none;
+      font-family: 'Montserrat', sans-serif; font-weight: 700;
+      font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.9rem 2rem; border-radius: 4px;
+      transition: background 0.25s, transform 0.25s;
+      white-space: nowrap;
+    }
+    .multifamily-cta:hover { background: #c72218; transform: translateY(-2px); }
+
+    /* ── PRODUCTS GRID ── */
+    #products {
+      background: var(--dark);
+      padding: 7rem 0;
+    }
+    .products-header { text-align: center; margin-bottom: 4rem; }
+    .products-header .section-heading { color: var(--white); }
+
+    .prod-section {
+      margin-bottom: 7rem;
+    }
+    .prod-section:last-child { margin-bottom: 0; }
+
+    /* Product row: alternates image left/right */
+    .prod-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+    .prod-row.reverse { direction: rtl; }
+    .prod-row.reverse > * { direction: ltr; }
+
+    .prod-img-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .prod-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+    }
+    .prod-img-wrap:hover img { transform: scale(1.04); }
+    .prod-img-badge {
+      position: absolute;
+      top: 1rem; left: 1rem;
+      background: var(--red);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+    }
+
+    .prod-content { }
+
+    .prod-content .section-label { margin-bottom: 0.6rem; }
+    .prod-name {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800; line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+    .prod-tagline {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1.25rem;
+    }
+    .prod-desc {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .prod-features {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 0.65rem;
+      margin-bottom: 2rem;
+    }
+    .prod-features li {
+      display: flex; align-items: flex-start; gap: 0.7rem;
+      font-size: 0.87rem; color: rgba(255,255,255,0.75);
+    }
+    .prod-features li::before {
+      content: ''; flex-shrink: 0;
+      width: 18px; height: 18px;
+      background: rgba(238,46,36,0.2);
+      border-radius: 50%;
+      margin-top: 0.15rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23EE2E24' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+      background-size: 10px; background-repeat: no-repeat; background-position: center;
+    }
+
+    .prod-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-brochure {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: rgba(255,255,255,0.07);
+      color: var(--white); text-decoration: none;
+      font-family: 'Montserrat', sans-serif; font-weight: 700;
+      font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.75rem 1.5rem; border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.12);
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .btn-brochure:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.2); }
+    .btn-brochure svg { width: 14px; height: 14px; stroke: var(--red); fill: none; stroke-width: 2.5; }
+    .btn-inquire {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: var(--red); color: var(--white); text-decoration: none;
+      font-family: 'Montserrat', sans-serif; font-weight: 700;
+      font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.75rem 1.5rem; border-radius: 4px;
+      transition: background 0.25s, transform 0.25s;
+    }
+    .btn-inquire:hover { background: #c72218; transform: translateY(-2px); }
+
+    /* ── DIVIDER ── */
+    .prod-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+      margin: 0;
+    }
+
+    /* ── GALLERY STRIP ── */
+    .gallery-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-top: 2.5rem;
+    }
+    .gallery-strip img {
+      width: 100%; aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+      transition: opacity 0.25s, transform 0.25s;
+    }
+    .gallery-strip img:hover { opacity: 0.85; transform: scale(1.03); }
+
+    /* ── WHO WE SERVE ── */
+    #who {
+      background: var(--light);
+      color: var(--dark);
+      padding: 7rem 0;
+    }
+    .who-header { text-align: center; margin-bottom: 4rem; }
+    .who-header .section-heading { color: var(--navy); }
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .who-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem;
+      border: 1px solid var(--ltgray);
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .who-card:hover {
+      border-color: var(--red);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+    }
+    .who-card h4 {
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 0.5rem;
+    }
+    .who-card p { font-size: 0.87rem; color: var(--gray); line-height: 1.6; }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--dark);
+      padding: 7rem 0;
+    }
+    .contact-inner { text-align: center; }
+    .contact-inner .section-heading { color: var(--white); margin-bottom: 3rem; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .contact-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: left;
+    }
+    .contact-card h4 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
+    .contact-card p { font-size: 0.87rem; color: var(--gray); line-height: 1.6; }
+    .contact-card a { color: var(--red); text-decoration: none; }
+    .contact-card a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer { background: #111; padding: 1.75rem 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
     footer p { font-size: 0.78rem; color: #444; }
     footer a { color: var(--red); text-decoration: none; }
 
-    /* Section label */
-    .section-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 0.85rem;
-    }
-    .section-heading {
-      font-size: clamp(2rem, 3.8vw, 2.9rem);
-      font-weight: 800;
-      line-height: 1.1;
-    }
-
-    /* Responsive */
+    /* ── Responsive ── */
     @media (max-width: 900px) {
       .container { padding: 0 1.5rem; }
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
-      .opp-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .products-grid { grid-template-columns: 1fr; }
-      .process-track { grid-template-columns: repeat(2, 1fr); }
-      .process-track::before { display: none; }
-      section { min-height: auto; padding: 5rem 0; }
+      .prod-row { grid-template-columns: 1fr; gap: 2rem; }
+      .prod-row.reverse { direction: ltr; }
+      .gallery-strip { grid-template-columns: repeat(2, 1fr); }
+      section { padding: 5rem 0; }
+      .multifamily-inner { flex-direction: column; text-align: center; }
     }
     @media (max-width: 600px) {
-      .process-track { grid-template-columns: 1fr; }
-      .contact-strip { flex-direction: column; text-align: center; gap: 1.25rem; }
-      .contact-strip .sep { width: 40px; height: 1px; }
+      .hero-main { font-size: clamp(3rem, 12vw, 5rem); }
       footer { flex-direction: column; text-align: center; }
+      .prod-actions { flex-direction: column; }
     }
   </style>
 </head>
@@ -521,30 +419,30 @@
 <nav id="navbar">
   <div class="nav-logo">CLOSETMAID<span>PRO</span></div>
   <ul class="nav-links">
-    <li><a href="#opportunity">Opportunity</a></li>
     <li><a href="#products">Products</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#next">Get Started</a></li>
+    <li><a href="#multifamily">Multifamily</a></li>
+    <li><a href="#who">Who We Serve</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-glow"></div>
-  <div class="container hero-inner">
-    <p class="hero-eyebrow">Partner Onboarding &bull; April 2026</p>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">ClosetMaid Pro &times; Tri-Supply &bull; Conroe, TX</p>
     <h1 class="hero-main">
       <span class="white">ClosetMaid</span><br>
       <span class="red">Pro</span>
     </h1>
-    <div class="hero-times">×</div>
-    <h1 class="hero-main" style="font-size: clamp(2.2rem,5.5vw,5rem); animation-delay:0.65s;">
+    <div class="hero-times">&times;</div>
+    <h1 class="hero-main" style="font-size: clamp(2.2rem,5.5vw,4.5rem); animation-delay:0.65s;">
       <span class="red">Tri-Supply</span>
     </h1>
-    <p class="hero-sub">Conroe, TX &bull; Building the partnership together</p>
+    <p class="hero-sub">Premium closet & storage systems for builders, developers, and contractors</p>
     <div class="hero-rule"></div>
-    <a href="#opportunity" class="hero-cta">
-      Begin the Overview
+    <a href="#products" class="hero-cta">
+      View Products
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </div>
@@ -554,45 +452,19 @@
   </div>
 </section>
 
-<!-- OPPORTUNITY -->
-<section id="opportunity">
+<!-- MULTIFAMILY BANNER -->
+<section id="multifamily">
   <div class="container">
-    <div class="opp-grid">
-      <div class="opp-left reveal">
-        <p class="section-label">The Opportunity</p>
-        <h2 class="opp-heading">Your builders are ready for more.</h2>
-        <div class="opp-bar"></div>
+    <div class="multifamily-inner">
+      <div class="multifamily-text reveal">
+        <div class="section-label" style="color: rgba(255,255,255,0.5);">New for Tri-Supply Partners</div>
+        <h3>Multifamily & Large-Scale Projects</h3>
+        <p>We perform complete designs and material takeoffs for multifamily, assisted living, and other large-scale projects. Share your plans — we handle the rest.</p>
       </div>
-      <ul class="opp-list">
-        <li class="opp-item reveal reveal-d1">
-          <div class="opp-bullet">1</div>
-          <div>
-            <h4>Your current focus</h4>
-            <p>MDF-based closet shelving sold directly to builders across the Conroe region.</p>
-          </div>
-        </li>
-        <li class="opp-item reveal reveal-d2">
-          <div class="opp-bullet">2</div>
-          <div>
-            <h4>The market shift</h4>
-            <p>Builders are moving toward faster installation and lower-maintenance options — wire and engineered systems are gaining share.</p>
-          </div>
-        </li>
-        <li class="opp-item reveal reveal-d3">
-          <div class="opp-bullet">3</div>
-          <div>
-            <h4>What Tri-Supply gains</h4>
-            <p>A complete wire, FastFinish, and premium closet lineup that complements your existing MDF — without replacing it.</p>
-          </div>
-        </li>
-        <li class="opp-item reveal reveal-d4">
-          <div class="opp-bullet">4</div>
-          <div>
-            <h4>Upside</h4>
-            <p>Higher-frequency reorders, new builder accounts, premium project opportunities, and ClosetMaid Pro's full field support network.</p>
-          </div>
-        </li>
-      </ul>
+      <a href="#contact" class="multifamily-cta reveal">
+        Request a Design
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -600,171 +472,278 @@
 <!-- PRODUCTS -->
 <section id="products">
   <div class="container">
+
     <div class="products-header reveal">
       <p class="section-label">Product Portfolio</p>
-      <h2 class="section-heading">Four lines. One partner.</h2>
+      <h2 class="section-heading">ClosetMaid Pro product lines available through Tri-Supply</h2>
     </div>
-    <div class="products-grid">
-      <div class="prod-card reveal reveal-d1">
-        <div class="prod-icon">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+
+    <!-- FastFinish -->
+    <div class="prod-section" id="fastfinish">
+      <div class="prod-row reveal">
+        <div class="prod-img-wrap">
+          <img src="https://closetmaidpro.com/wp-content/uploads/2026/01/10000-06724_8X14_Shelf_Silo-768x768.png"
+               alt="FastFinish closet system"
+               onerror="this.src='https://closetmaidpro.com/wp-content/uploads/2025/01/10000-04334_ShelfTrackEvo_2Foot_PantryKit_001a_Lifestyle-1024x1024.jpg'">
+          <span class="prod-img-badge">New</span>
         </div>
-        <h3>Wire Systems</h3>
-        <p>Lightweight, fast-install wire shelving ideal for reach-in closets and pantries. Resistant to sag and corrosion — built for the job site.</p>
-        <div class="prod-tags">
-          <span class="prod-tag">Reach-In</span>
-          <span class="prod-tag">Pantry</span>
-          <span class="prod-tag">Garage</span>
-        </div>
-      </div>
-      <div class="prod-card reveal reveal-d2">
-        <div class="prod-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        </div>
-        <h3>FastFinish</h3>
-        <p>No-miter, no-sand wood finishing system that cuts install time significantly. Professional look, builder-friendly process.</p>
-        <div class="prod-tags">
-          <span class="prod-tag">No Miter</span>
-          <span class="prod-tag">No Sand</span>
-          <span class="prod-tag">Fast Install</span>
-        </div>
-      </div>
-      <div class="prod-card reveal reveal-d3">
-        <div class="prod-icon">
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <h3>ShelfTrack EVO</h3>
-        <p>Premium adjustable closet system engineered for strength and aesthetics. Designed for high-end residential projects.</p>
-        <div class="prod-tags">
-          <span class="prod-tag">Premium</span>
-          <span class="prod-tag">Adjustable</span>
-          <span class="prod-tag">High-End</span>
+        <div class="prod-content">
+          <p class="section-label">Wood Systems</p>
+          <h2 class="prod-name">FastFinish&trade;</h2>
+          <p class="prod-tagline">The One-Hour Closet System</p>
+          <p class="prod-desc">
+            FastFinish&trade; is the modern update for outdated plank-and-pole closets. Designed to be fast and easy, FastFinish installs in under an hour with one trade and one trip &mdash; eliminating the delays, callbacks, and extra steps that slow down old closet installs.
+          </p>
+          <ul class="prod-features">
+            <li>No painting &mdash; installs after painting is complete</li>
+            <li>No caulking required</li>
+            <li>Allows pre-fabrication off-site, reducing job site material handling</li>
+            <li>Meets ANSI-BIFMA functional and proof load requirements</li>
+            <li>Supports up to 65 lbs./ft. load capacity</li>
+            <li>Now accepting pre-orders</li>
+          </ul>
+          <div class="prod-actions">
+            <a href="https://closetmaidpro.com/fastfinish/" target="_blank" class="btn-brochure">
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Brochure
+            </a>
+            <a href="https://closetmaidpro.com/contact/" target="_blank" class="btn-inquire">Inquire Now</a>
+          </div>
         </div>
       </div>
-      <div class="prod-card reveal reveal-d4">
-        <div class="prod-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    </div>
+
+    <div class="prod-divider"></div>
+
+    <!-- ShelfTrack EVO -->
+    <div class="prod-section" id="shelftrack-evo">
+      <div class="prod-row reverse reveal">
+        <div class="prod-img-wrap">
+          <img src="https://closetmaidpro.com/wp-content/uploads/2025/01/10000-04334_ShelfTrackEvo_2Foot_PantryKit_001a_Lifestyle-1024x1024.jpg"
+               alt="ShelfTrack EVO closet system">
+          <span class="prod-img-badge">Premium</span>
         </div>
-        <h3>MasterSuite</h3>
-        <p>Luxury closet storage solution with full customization for walk-in closets. High perceived value that helps builders close premium projects.</p>
-        <div class="prod-tags">
-          <span class="prod-tag">Walk-In</span>
-          <span class="prod-tag">Luxury</span>
-          <span class="prod-tag">Custom</span>
+        <div class="prod-content">
+          <p class="section-label">Wood &amp; Wire Systems</p>
+          <h2 class="prod-name">ShelfTrack&reg; EVO</h2>
+          <p class="prod-tagline">Premium Adjustable Wood &amp; Wire Storage System</p>
+          <p class="prod-desc">
+            Everything you love about ShelfTrack just got even better. ShelfTrack&reg; EVO is designed for homeowners and built for professionals &mdash; combining redesigned hardware, high-quality melamine shelving, and easy-to-install accessories for a fast, hassle-free solution that delivers the modern look and versatility homeowners want, all at an affordable price point.
+          </p>
+          <ul class="prod-features">
+            <li>Fast and easy to install &mdash; new hang track with more horizontal slots</li>
+            <li>Premium melamine shelving with pre-edge-banded and pre-finished options</li>
+            <li>Enhanced adjustable hardware with fewer standards needed</li>
+            <li>Combines wire and wood components that can be expanded or customized</li>
+            <li>Meets ADA requirements for adjustable systems</li>
+          </ul>
+          <div class="gallery-strip reveal-d1">
+            <img src="https://closetmaidpro.com/wp-content/uploads/2025/01/10000-04579_Single-Family_8ft-Reach-In_Modern-Fronts_White-DrawerKit-768x556.jpg" alt="ShelfTrack EVO installation">
+            <img src="https://closetmaidpro.com/wp-content/uploads/2025/01/ShelfTrack-Evo_Golden-Oak-768x238.png" alt="ShelfTrack EVO golden oak finish">
+            <img src="https://closetmaidpro.com/wp-content/uploads/2025/01/ShelfTrack-Evo_Hang-Rod-Bracket-with-Pole-Cup-768x371.png" alt="ShelfTrack EVO hardware">
+            <img src="https://closetmaidpro.com/wp-content/uploads/2025/01/Frosted-Birch-768x768.jpg" alt="ShelfTrack EVO frosted birch finish">
+          </div>
+          <div class="prod-actions" style="margin-top:1.5rem;">
+            <a href="https://closetmaidpro.com/shelftrack-evo/" target="_blank" class="btn-brochure">
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Brochure
+            </a>
+            <a href="https://closetmaidpro.com/contact/" target="_blank" class="btn-inquire">Inquire Now</a>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <div class="prod-divider"></div>
+
+    <!-- MasterSuite -->
+    <div class="prod-section" id="mastersuite">
+      <div class="prod-row reveal">
+        <div class="prod-img-wrap">
+          <img src="https://closetmaidpro.com/wp-content/uploads/2024/11/mastersuite-oxford-1024x603.jpg"
+               alt="MasterSuite closet system">
+          <span class="prod-img-badge">Luxury</span>
+        </div>
+        <div class="prod-content">
+          <p class="section-label">Wood Systems</p>
+          <h2 class="prod-name">MasterSuite&reg;</h2>
+          <p class="prod-tagline">Premium Wood Closet &amp; Storage System</p>
+          <p class="prod-desc">
+            MasterSuite&reg; combines industrial-grade engineered wood with a durable melamine finish and solid wood drawers to deliver lasting luxury. Its versatile design offers nearly endless configurations of shelves, cabinets, drawers, hang rods, and more, making it easy to customize for any space and function.
+          </p>
+          <ul class="prod-features">
+            <li>3/4&rdquo; industrial-grade engineered wood, 45 lbs./ft.&sup3; density</li>
+            <li>Thermal-fused melamine with 1 mm PVC edge banding</li>
+            <li>Thermal-foil doors and drawers &mdash; kitchen cabinet quality</li>
+            <li>Solid wood drawer box and drawer front options available</li>
+            <li>Floor-mounted or wall-mounted installation</li>
+            <li>TSCA Title VI compliant</li>
+          </ul>
+          <div class="gallery-strip reveal-d1">
+            <img src="https://closetmaidpro.com/wp-content/uploads/2025/01/master-suite3-1024x775.jpeg" alt="MasterSuite interior">
+            <img src="https://closetmaidpro.com/wp-content/uploads/2025/01/master-suite4.jpeg" alt="MasterSuite detail">
+            <img src="https://closetmaidpro.com/wp-content/uploads/2024/11/mastersuite-natural-1-1024x683.jpg" alt="MasterSuite natural finish">
+            <img src="https://closetmaidpro.com/wp-content/uploads/2024/11/mastersuite-oxford-1024x603.jpg" alt="MasterSuite oxford">
+          </div>
+          <div class="prod-actions" style="margin-top:1.5rem;">
+            <a href="https://closetmaidpro.com/mastersuite/" target="_blank" class="btn-brochure">
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Brochure
+            </a>
+            <a href="https://closetmaidpro.com/contact/" target="_blank" class="btn-inquire">Inquire Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prod-divider"></div>
+
+    <!-- Wire Systems (Fixed Mount) -->
+    <div class="prod-section" id="wire">
+      <div class="prod-row reverse reveal">
+        <div class="prod-img-wrap">
+          <img src="https://closetmaidpro.com/wp-content/uploads/2025/01/1078_1608_Fixed-Mount-Kit_Shelf-Rod_White_Propped-1024x768.jpg"
+               alt="Fixed Mount Ventilated Wire closet system">
+          <span class="prod-img-badge">Economical</span>
+        </div>
+        <div class="prod-content">
+          <p class="section-label">Wire Systems</p>
+          <h2 class="prod-name">Fixed Mount Ventilated Wire</h2>
+          <p class="prod-tagline">Cost-Effective, Practical &amp; Built to Last</p>
+          <p class="prod-desc          >
+            Fixed Mount Ventilated Wire systems are cost-effective, practical, and built to last. The open design of the wire components allows for better airflow &mdash; essential for certain environments and applications. ClosetMaid&reg; steel ventilated wire shelves are cold-drawn, significantly enhancing tensile strength. Every wire intersection is welded, with a vinyl coating that fully covers both wires and welds &mdash; offering superior protection against corrosion, chipping, and rust.
+          </p>
+          <ul class="prod-features">
+            <li>Open-wire design allows better airflow in any environment</li>
+            <li>Cold-drawn steel with welded wire intersections for superior strength</li>
+            <li>Full vinyl coating covers wires and welds &mdash; resists rust and corrosion</li>
+            <li>Steel components are highly recyclable</li>
+            <li>Most economical system in the ClosetMaid Pro lineup</li>
+            <li>Available in White and Satin Chrome finishes</li>
+          </ul>
+          <div class="gallery-strip reveal-d1">
+            <img src="https://closetmaidpro.com/wp-content/uploads/2025/01/1078_1608_Fixed-Mount-Kit_Shelf-Rod_White_Propped-1024x768.jpg" alt="Fixed Mount white">
+            <img src="https://closetmaidpro.com/wp-content/uploads/2025/01/137-WHT-Metal-J-Bracket-RI-Fixed-Mount-Angled-1024x698.jpg" alt="Fixed Mount bracket">
+            <img src="https://closetmaidpro.com/wp-content/uploads/2024/12/Wire-Swatch_Satin-Chrome-768x768.jpg" alt="Satin Chrome finish">
+            <img src="https://closetmaidpro.com/wp-content/uploads/2024/12/Wire-Swatch_White-768x768.jpg" alt="White finish">
+          </div>
+          <div class="prod-actions" style="margin-top:1.5rem;">
+            <a href="https://closetmaidpro.com/fixed-mount/" target="_blank" class="btn-brochure">
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Brochure
+            </a>
+            <a href="https://closetmaidpro.com/contact/" target="_blank" class="btn-inquire">Inquire Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prod-divider"></div>
+
+    <!-- MaxLoad -->
+    <div class="prod-section" id="maxload">
+      <div class="prod-row reveal">
+        <div class="prod-img-wrap">
+          <img src="https://closetmaidpro.com/wp-content/uploads/2025/01/MaxLoad_GlossyBlack_1-2-1024x576.jpg"
+               alt="MaxLoad heavy duty wire system">
+          <span class="prod-img-badge">Heavy Duty</span>
+        </div>
+        <div class="prod-content">
+          <p class="section-label">Wire Systems</p>
+          <h2 class="prod-name">MaxLoad&reg;</h2>
+          <p class="prod-tagline">Heavy Duty Wire Closet &amp; Storage Systems</p>
+          <p class="prod-desc">
+            MaxLoad&reg; provides unmatched strength and durability for your storage requirements. This high-performance system combines Heavy Duty shelving with the adjustable ShelfTrack&reg; system &mdash; when standards are stud mounted no more than 16&rdquo; apart, Heavy Duty shelving supports up to 100 lbs. per linear foot. MaxLoad is ideal for storing large items in the garage such as totes, power tools, and lawn equipment.
+          </p>
+          <ul class="prod-features">
+            <li>Supports 100 lbs. per linear foot when standards are stud-mounted 16&rdquo; apart</li>
+            <li>Adjustable vertically and horizontally for maximum flexibility</li>
+            <li>Ideal for garages, workshops, and large-item storage</li>
+            <li>Excellent alternative to standard fixed-shelf applications</li>
+            <li>Meets ADA requirements</li>
+          </ul>
+          <div class="gallery-strip reveal-d1">
+            <img src="https://closetmaidpro.com/wp-content/uploads/2025/01/0000s_0000_6556300-MaxLoad-2-Handle-Hook-Hang-Up-Black.png" alt="MaxLoad hook">
+            <img src="https://closetmaidpro.com/wp-content/uploads/2025/01/0000s_0001_6555400-MaxLoad-Power-Equipment-Hook-Hang-Up-Black.png" alt="MaxLoad power equipment hook">
+            <img src="https://closetmaidpro.com/wp-content/uploads/2025/01/0000s_0004_6552800-MaxLoad-4.5-in.-Hook-Hang-Up-Black.png" alt="MaxLoad hook detail">
+            <img src="https://closetmaidpro.com/wp-content/uploads/2024/12/Wire-Swatch_Glossy-Black-768x768.jpg" alt="Glossy Black finish">
+          </div>
+          <div class="prod-actions" style="margin-top:1.5rem;">
+            <a href="https://closetmaidpro.com/maxload/" target="_blank" class="btn-brochure">
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Brochure
+            </a>
+            <a href="https://closetmaidpro.com/contact/" target="_blank" class="btn-inquire">Inquire Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHO WE SERVE -->
+<section id="who">
+  <div class="container">
+    <div class="who-header reveal">
+      <p class="section-label" style="color: var(--red);">Who We Serve</p>
+      <h2 class="section-heading">Built for the professionals who build Texas</h2>
+    </div>
+    <div class="who-grid">
+      <div class="who-card reveal reveal-d1">
+        <h4>Builders &amp; Developers</h4>
+        <p>Single-family and multi-unit residential developers who need reliable, on-time closet systems across every unit they build.</p>
+      </div>
+      <div class="who-card reveal reveal-d2">
+        <h4>General Contractors</h4>
+        <p>Contractors managing closet and storage scopes on new construction or renovation projects &mdash; one point of contact, one reliable vendor.</p>
+      </div>
+      <div class="who-card reveal reveal-d3">
+        <h4>Architects &amp; Designers</h4>
+        <p>Design professionals specifying closet systems for their projects, with support from concept through installation.</p>
+      </div>
+      <div class="who-card reveal reveal-d4">
+        <h4>Multifamily &amp; Senior Housing</h4>
+        <p>Large-scale projects including apartment complexes, assisted living, and condo developments. We provide complete designs and material takeoffs.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section id="process">
-  <div class="container">
-    <div class="process-header reveal">
-      <p class="section-label">The Process</p>
-      <h2 class="section-heading">Simple. Supported. Fast.</h2>
-    </div>
-    <div class="process-track">
-      <div class="step reveal reveal-d1">
-        <div class="step-circle">1</div>
-        <h4>Place the Order</h4>
-        <p>Submit via your rep or portal. No minimums for initial setup orders.</p>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container contact-inner">
+    <p class="section-label reveal" style="color: var(--gray);">Get Started</p>
+    <h2 class="section-heading reveal">Ready to add ClosetMaid Pro to your line?</h2>
+    <div class="contact-grid" style="margin-top: 3rem;">
+      <div class="contact-card reveal reveal-d1">
+        <h4>Your Rep &mdash; David</h4>
+        <p>david@traditionsales.com</p>
+        <p style="margin-top:0.5rem;">Your dedicated ClosetMaid Pro sales representative for the Texas, Oklahoma, Louisiana, and Mississippi territory.</p>
       </div>
-      <div class="step reveal reveal-d2">
-        <div class="step-circle">2</div>
-        <h4>Confirm & Review</h4>
-        <p>Your rep confirms specs and lead times before production starts.</p>
+      <div class="contact-card reveal reveal-d2">
+        <h4>Request a Quote</h4>
+        <p>Contact David to discuss pricing, lead times, and sample availability for any ClosetMaid Pro product line.</p>
       </div>
-      <div class="step reveal reveal-d3">
-        <div class="step-circle">3</div>
-        <h4>Production & QC</h4>
-        <p>ClosetMaid handles manufacturing and quality control.</p>
+      <div class="contact-card reveal reveal-d3">
+        <h4>Multifamily &amp; Large Projects</h4>
+        <p>Send your plans to David for complete design drawings and material takeoffs &mdash; no obligation, no delay.</p>
       </div>
-      <div class="step reveal reveal-d4">
-        <div class="step-circle">4</div>
-        <h4>Delivery</h4>
-        <p>Product ships to your location with tracking and clear labeling.</p>
-      </div>
-      <div class="step reveal" style="transition-delay:0.68s;">
-        <div class="step-circle">5</div>
-        <h4>Builder Install</h4>
-        <p>Your builders install with provided guides. Support is always available.</p>
-      </div>
-    </div>
-    <div class="process-note reveal">
-      Your ClosetMaid Pro rep is with you every step — from first order to builder training.
-    </div>
-  </div>
-</section>
-
-<!-- NEXT STEPS -->
-<section id="next">
-  <div class="container">
-    <div class="next-header reveal">
-      <p class="section-label">Get Started</p>
-      <h2 class="section-heading">Your action plan to go live.</h2>
-    </div>
-    <div class="next-grid">
-      <div class="next-card reveal reveal-d1">
-        <div class="next-num">1</div>
-        <div>
-          <h4>Set Up Your Account</h4>
-          <p>Complete the Tri-Supply account setup with your ClosetMaid Pro rep — quick and straightforward.</p>
-        </div>
-      </div>
-      <div class="next-card reveal reveal-d2">
-        <div class="next-num">2</div>
-        <div>
-          <h4>Order Initial Samples</h4>
-          <p>Request your starter sample pack covering wire, FastFinish, ShelfTrack EVO, and MasterSuite.</p>
-        </div>
-      </div>
-      <div class="next-card reveal reveal-d3">
-        <div class="next-num">3</div>
-        <div>
-          <h4>Schedule Builder Training</h4>
-          <p>Book a 30-minute virtual or in-person walkthrough for your team — no expertise required.</p>
-        </div>
-      </div>
-      <div class="next-card reveal reveal-d4">
-        <div class="next-num">4</div>
-        <div>
-          <h4>Request POS Materials</h4>
-          <p>Get catalogs, spec sheets, and builder-facing sell sheets to support your sales effort.</p>
-        </div>
-      </div>
-      <div class="next-card reveal" style="transition-delay:0.68s;">
-        <div class="next-num">5</div>
-        <div>
-          <h4>Set Your First Order</h4>
-          <p>Place your first stock order and establish your initial inventory baseline for Tri-Supply.</p>
-        </div>
-      </div>
-    </div>
-    <div class="contact-strip reveal">
-      <div>
-        <div class="rep-name">David</div>
-        <div class="rep-role">ClosetMaid Pro Sales Rep</div>
-      </div>
-      <div class="sep"></div>
-      <div class="email"><strong>david@traditionsales.com</strong></div>
     </div>
   </div>
 </section>
 
 <footer>
   <p>&copy; 2026 ClosetMaid Pro &bull; <a href="https://closetmaidpro.com">closetmaidpro.com</a></p>
-  <p>Tri-Supply Partner Onboarding &bull; Conroe, TX</p>
+  <p>Tri-Supply Partner &bull; Conroe, TX</p>
 </footer>
 
 <script>
-  // Nav scroll
   const nav = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 55);
   });
 
-  // Intersection observer for reveals
   const reveals = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -772,7 +751,7 @@
         entry.target.classList.add('visible');
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => io.observe(el));
 </script>
 </body>
