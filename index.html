@@ -73,27 +73,8 @@
     #hero {
       min-height: 100vh;
       display: flex; align-items: center; justify-content: center;
-      background: var(--dark);
+      background: #FAF7F2;
       position: relative; overflow: hidden;
-    }
-    .hero-glow { position: absolute; inset: 0; pointer-events: none; }
-    .hero-glow::before {
-      content: ''; position: absolute;
-      top: -30%; right: -15%;
-      width: 800px; height: 800px;
-      background: radial-gradient(circle, rgba(238,46,36,0.13) 0%, transparent 65%);
-      animation: glowPulse 9s ease-in-out infinite;
-    }
-    .hero-glow::after {
-      content: ''; position: absolute;
-      bottom: -25%; left: -10%;
-      width: 650px; height: 650px;
-      background: radial-gradient(circle, rgba(24,13,67,0.4) 0%, transparent 65%);
-      animation: glowPulse 11s ease-in-out infinite reverse;
-    }
-    @keyframes glowPulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.1); opacity: 0.6; }
     }
     .hero-inner {
       text-align: center; position: relative; z-index: 2;
@@ -102,18 +83,18 @@
     }
     .hero-brand-row {
       display: flex; align-items: center; justify-content: center;
-      gap: 1.5rem; margin-bottom: 1.5rem;
+      gap: 2rem; margin-bottom: 2rem;
       opacity: 0; transform: translateY(25px);
       animation: rise 0.9s 0.4s cubic-bezier(0.22,1,0.36,1) forwards;
     }
-    .hero-cm-logo { height: 52px; }
-    .hero-ts-logo { height: 52px; }
+    .hero-cm-logo { height: 48px; }
+    .hero-ts-logo { height: 48px; }
     .hero-divider-bar {
       width: 3px; height: 40px; background: var(--red); border-radius: 2px;
     }
     .hero-subtitle {
-      font-size: clamp(0.9rem, 2vw, 1.15rem);
-      font-weight: 400; color: rgba(255,255,255,0.6);
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      font-weight: 400; color: rgba(28,28,26,0.55);
       letter-spacing: 0.04em; max-width: 580px;
       line-height: 1.7;
       opacity: 0; transform: translateY(20px);
@@ -334,14 +315,12 @@
       <img src="https://closetmaidpro.com/wp-content/themes/closetmaidpro/assets/images/logo.svg"
            alt="ClosetMaid Pro"
            class="hero-cm-logo"
-           onerror="this.outerHTML='<span style=\'font-family:Montserrat,sans-serif;font-weight:900;font-size:2rem;color:white;\'>CLOSETMAID<span style=\'color:#EE2E24;\'>PRO</span></span>'">
+           onerror="this.outerHTML='<span style=\'font-family:Montserrat,sans-serif;font-weight:900;font-size:1.8rem;color:#180D43;\'>CLOSETMAID<span style=\'color:#EE2E24;\'>PRO</span></span>'">
       <div class="hero-divider-bar"></div>
-      <!-- Tri-Supply logo - REPLACE THE URL BELOW with actual TriSupply logo -->
-      <img src="https://www.trisupply.com/images/logo.png"
+      <!-- Tri-Supply logo -->
+      <img src="https://dsombrio.github.io/tri-supply-closetmaid-deck/trisupply-logo.svg"
            alt="Tri-Supply"
-           class="hero-ts-logo"
-           id="tsLogo"
-           onerror="this.style.display='none'">
+           class="hero-ts-logo">
     </div>
     <p class="hero-subtitle">A complete closet and storage system for contractors, builders, and designers.</p>
     <div class="hero-rule"></div>
