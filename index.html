@@ -87,8 +87,8 @@
       opacity: 0; transform: translateY(25px);
       animation: rise 0.9s 0.4s cubic-bezier(0.22,1,0.36,1) forwards;
     }
-    .hero-cm-logo { height: 48px; }
-    .hero-ts-logo { height: 48px; }
+    .hero-cm-logo { height: auto; }
+    .hero-ts-logo { height: auto; }
     .hero-divider-bar {
       width: 3px; height: 40px; background: var(--red); border-radius: 2px;
     }
@@ -317,10 +317,8 @@
            class="hero-cm-logo"
            onerror="this.outerHTML='<span style=\'font-family:Montserrat,sans-serif;font-weight:900;font-size:1.8rem;color:#180D43;\'>CLOSETMAID<span style=\'color:#EE2E24;\'>PRO</span></span>'">
       <div class="hero-divider-bar"></div>
-      <!-- Tri-Supply logo -->
-      <img src="https://dsombrio.github.io/tri-supply-closetmaid-deck/trisupply-logo.svg"
-           alt="Tri-Supply"
-           class="hero-ts-logo">
+      <!-- Tri-Supply logo (text to match CM Pro) -->
+      <span style="font-family:'Montserrat',Arial,sans-serif;font-weight:900;font-size:1.15rem;letter-spacing:0.08em;color:#03273a;line-height:1;">TRI-SUPPLY</span>
     </div>
     <p class="hero-subtitle">A complete closet and storage system for contractors, builders, and designers.</p>
     <div class="hero-rule"></div>
